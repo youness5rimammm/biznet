@@ -1305,7 +1305,8 @@ textarea.input-field {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 35px 35px 25px;
+  padding: 10px  8px;
+  /* padding: 35px 35px 25px; */
 }
 
 .event-card .publish-date {
@@ -1481,7 +1482,7 @@ textarea.input-field {
  * responsive for larger than 575px screen
  */
 
-@media (min-width: 575px) {
+@media (min-width: 875px) {
 
   /**
    * CUSTOM PROPERTY
@@ -1564,6 +1565,11 @@ textarea.input-field {
 
   .header.active { top: 0; }
 
+  .header .btn {
+    display: block;
+    margin-inline-start: auto;
+  }
+  media-max
   .header .btn {
     display: block;
     margin-inline-start: auto;
