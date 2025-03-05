@@ -168,3 +168,33 @@ window.addEventListener("mousemove", function (event) {
   }
 
 });
+// Add spaces between each character to ensure proper spacing
+const rawText = "BIZNET COLLEGE - THE PEOPLE'S FREEDOM NETWORK";
+    
+// Create an array of characters from the text
+const characters = rawText.split('');
+
+const textCircle = document.getElementById('spinnerTextCircle');
+const totalLetters = characters.length;
+const radius = 180; // Increased radius to make the circle larger
+
+// Distribute characters evenly around the full circle (2π radians)
+for (let i = 0; i < totalLetters; i++) {
+  const letter = document.createElement('div');
+  letter.className = 'spinner-text-letter';
+  letter.textContent = characters[i];
+  
+  // Calculate exact angle for each letter (divide the circle evenly)
+  const angle = (i * (2 * Math.PI / totalLetters));
+  
+  // Position each letter along the circle
+  const x = radius * Math.cos(angle);
+  const y = radius * Math.sin(angle);
+  
+  // Rotate each letter to face outward
+  const rotation = (angle * 180 / Math.PI) + 90;
+  
+  letter.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+  
+  textCircle.appendChild(letter);
+}

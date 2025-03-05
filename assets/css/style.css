@@ -1012,7 +1012,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .about .abs-img-2 {
-  top: -65px;
+  top: -95px;
   right: 0;
   overflow: hidden;
 }
@@ -1027,15 +1027,20 @@ body.nav-active { overflow: hidden; }
   background-repeat: repeat;
 }
 
-.about .abs-img-2::before {
-  inset: 0;
-  background-image: url('../images/badge-2-bg.png');
-  background-repeat: no-repeat;
-  background-size: 215px;
-  animation: rotate360 15s linear infinite;
+
+
+@keyframes rotate-animation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
 }
 
-
+.rotating-logo {
+  animation: rotate-animation 10s linear infinite;
+}
 
 
 
