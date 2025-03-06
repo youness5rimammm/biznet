@@ -453,13 +453,16 @@
               <img src="./assets/images/about-abs-image.jpg" width="285" height="285" loading="lazy" alt=""
                 class="w-100">
             </div> -->
-            <div class="abs-img abs-img-2 has-before relative">
-              <img width="180"
-                  src="./assets/images/logosbran.png" 
-                  alt="Rotating Logo" 
-                  class="rotating-logo absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-              />
-          </div>
+             <!-- Example div where you might want to position your component -->
+    <div style="position: relative; width: 100%; height: 100%;">
+      <!-- Your rotating text component with unique class names -->
+      <div class="logo-container">
+        <div class="center-logo">
+            <!-- Placeholder for your image -->
+            <img src="./assets/images/circlebiz.png" alt="BIZNET COLLEGE">
+        </div>
+        <div class="rotating-circle" id="rotating-circle"></div>
+    </div>
           </figure>
 
 
@@ -744,12 +747,7 @@
             <div class="separator"></div>
           </div>
 
-          <div class="profile">
-            <img src="./assets/images/testi-avatar.png" width="100" height="100" loading="lazy" alt="Sam Jhonson"
-              class="img">
-
-            <a href="pdf/bobwoodceo.pdf"><p class="label-2 profile-name">Meet the CEO, Bob Wood</p></a>
-          </div>
+          
 
         </div>
       </section>
@@ -1056,7 +1054,12 @@
               <span class="text text-2" aria-hidden="true">Subscribe</span>
             </button>
           </form> -->
+          <div class="profile">
+            <img src="./assets/images/testi-avatar.png" width="100" height="100" loading="lazy" alt="Sam Jhonson"
+              class="img">
 
+            <a href="pdf/bobwoodceo.pdf"><p class="label-2 profile-name">Meet the CEO, Bob Wood</p></a>
+          </div>
         </div>
 
         <ul class="footer-list">
@@ -1156,7 +1159,31 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+ <script>  document.addEventListener('DOMContentLoaded', function() {
+  const text = "THE PEOPLE'S FREEDOM NETWORK COLLEGE";
+  const circle = document.getElementById('rotating-circle');
+  const radius = 105; // Adjusted radius for smaller size
+  
+  // Calculate angle between letters for even distribution
+  const angleStep = (2 * Math.PI) / text.length;
+  
+  // Create and position each letter
+  for (let i = 0; i < text.length; i++) {
+      const span = document.createElement('span');
+      span.className = 'rotating-letter';
+      span.textContent = text[i];
+      
+      // Calculate position on the circle
+      const angle = i * angleStep;
+      const x = radius * Math.cos(angle);
+      const y = radius * Math.sin(angle);
+      
+      // Position and rotate the letter
+      span.style.transform = `translate(${x}px, ${y}px) rotate(${angle + Math.PI/2}rad)`;
+      
+      circle.appendChild(span);
+  }
+});</script>
 </body>
 
 </html>

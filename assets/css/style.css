@@ -1012,38 +1012,99 @@ body.nav-active { overflow: hidden; }
 }
 
 .about .abs-img-2 {
-  top: -95px;
-  right: 0;
+  top: -105px;
+  right: -120px;
   overflow: hidden;
 }
 
-.about .abs-img-1::before {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 140px;
-  background-image: url('../images/img-pattern.svg');
-  background-repeat: repeat;
+
+        /* Main container with your positioning */
+        .logo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            right: -290px;
+            margin-bottom: -100px;
+            top: -850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Center logo - removed background color */
+        .center-logo {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .center-logo img {
+            width: 98%;
+            height: 98%;
+            object-fit: contain;
+        }
+
+        /* Rotating text circle */
+        .rotating-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotate 20s linear infinite;
+        }
+
+        /* Each letter in the rotating text */
+        .rotating-letter {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 12px;
+            color: #D4AF37;
+            font-weight: bold;
+            transform-origin: 0 0;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    
+@media (max-width: 590px) {
+  .logo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    right: -160px;
+    margin-bottom: -100px;
+    top: -850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
-
-@keyframes rotate-animation {
-  from {
-      transform: rotate(0deg);
-  }
-  to {
-      transform: rotate(360deg);
-  }
 }
-
-.rotating-logo {
-  animation: rotate-animation 10s linear infinite;
+@media (max-width: 450px) {
+  .logo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    right: -120px;
+    margin-bottom: -100px;
+    top: -750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
-
+}
+    
 /*-----------------------------------*\
   #SPECIAL DISH
 \*-----------------------------------*/
@@ -1190,7 +1251,7 @@ body.nav-active { overflow: hidden; }
   margin-block-end: 15px;
 }
 
-.testi .profile-name {
+.profile-name {
   color: var(--gold-crayola);
   font-weight: var(--weight-bold);
   text-transform: uppercase;
